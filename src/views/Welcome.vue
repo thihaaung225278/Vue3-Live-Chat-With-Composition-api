@@ -1,6 +1,6 @@
 <template>
   <div v-if="showLogin">
-    <Login></Login>
+    <Login @enterChatroom="enterChatroom"></Login>
     <p class="text-center mt-5">
       Create a new User.
       <a href="#" @click="showLogin=!showLogin"><strong>Signup Account</strong></a>
@@ -20,6 +20,8 @@
 import Signup from '../components/Signup'
 import Login from '../components/Login'
 import { ref } from '@vue/reactivity'
+import {useRouter} from "vue-router"
+
 export default {
   name: 'Home',
   components: {
@@ -28,8 +30,13 @@ export default {
   },
   setup(){
     let showLogin = ref(true);
+    let router = useRouter();
 
-    return {showLogin}
+    let enterChatroom = () =>{
+      router.push({name:'Chatroom'});
+    }
+
+    return {showLogin, enterChatroom}
   }
 }
 </script>

@@ -9,7 +9,7 @@ let loginAccount = async (email, password) => {
     if (res.status == "404") {
       throw new Error("Cannot not Login for this account.");
     }
-    console.log(res);
+    return res;
   } catch (err) {
     error.value = err.message;
   }
