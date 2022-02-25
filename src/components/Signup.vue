@@ -2,6 +2,9 @@
 <div class="row mt-5">
     <div class="col-md-6 mx-auto">
         <div class="card p-3 shadow-sm border border-2">
+            <div v-if="error">
+                <p class="text-danger">{{error}}</p>
+            </div>
             <form @submit.prevent="signup">
                 <span class="badge bg-warning mb-3"><h2 class="text-dark">Signup Account</h2></span>
                 <div class="mb-3">
@@ -36,8 +39,10 @@ export default {
         let password = ref("");
         let {error, createAccount} = useSignup();
 
-        let signup = () =>{
-            createAccount(email.value, password.value, username.value);
+        let signup = async() =>{
+            let res = await createAccount(email.value, password.value, username.value);
+            console.log(res);
+            
         }
 
         return {username, email, password, error, signup}
