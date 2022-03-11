@@ -6,7 +6,7 @@ let error = ref("");
 let loginAccount = async (email, password) => {
   try {
     let res = await auth.signInWithEmailAndPassword(email, password);
-    if (res.status == "404") {
+    if (!res) {
       throw new Error("Cannot not Login for this account.");
     }
     return res;

@@ -17,13 +17,28 @@
 </template>
 
 <script>
+import {watch} from "vue"
+import getUser from "../composables/getUser"
+import {useRouter} from "vue-router"
+
 import ChatroomMessageForm from '../components/ChatroomMessageForm'
 import ChatroomWindow from '../components/ChatroomWindow'
 import ChatroomHeader from '../components/ChatroomHeader'
+
 export default {
   components: {
     ChatroomMessageForm,
     ChatroomWindow, ChatroomHeader },
+  
+  setup(){
+    let {user} = getUser();
+    let router = useRouter();
+    watch(user, ()=>{
+      if(!user.value){
+        router.push("/");
+      }
+    })
+  }
 
 }
 </script>

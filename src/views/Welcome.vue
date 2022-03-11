@@ -26,7 +26,7 @@ export default {
   name: 'Home',
   components: {
     Signup,
-    Login,
+    Login,  
   },
   setup(){
     let showLogin = ref(true);
