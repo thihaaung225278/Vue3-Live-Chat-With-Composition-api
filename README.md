@@ -1,7 +1,6 @@
 # live-chat
 
-# Project setup
-```
+# Project Link
 https://live-chat-with-vue-capi.web.app/
 
 ## Project setup
