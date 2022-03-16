@@ -27,8 +27,8 @@ export default {
                 name: user.value.displayName,
                 created_at: timestamp() 
             }
-            console.log(chat);
             await addDocument(chat);
+            message.value = ""
         }
 
         return {message, handleMessage, error, addDocument}
