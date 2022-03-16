@@ -92,4 +92,23 @@ export default {
         font-size: 14px;
         color: #aaa;
     }
+    * {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffc107;
+  border-radius: 20px;
+  border:2px solid #ddd;
+}
 </style>
