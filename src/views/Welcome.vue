@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
   <div v-if="showLogin">
     <Login @enterChatroom="enterChatroom"></Login>
     <p class="text-center mt-5">
@@ -12,6 +13,7 @@
       Already Signup? 
       <a href="#" @click="showLogin=!showLogin"><strong>Login Account</strong></a>
     </p>
+  </div>
   </div>
 </template>
 

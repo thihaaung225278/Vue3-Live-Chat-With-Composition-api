@@ -1,7 +1,7 @@
 import { ref } from "@vue/reactivity";
 import { db } from "../firebase/config";
 
-let useCollection = (collection) => {
+let useCollection = () => {
   let error = ref("");
   let addDocument = async (doc) => {
     try {
