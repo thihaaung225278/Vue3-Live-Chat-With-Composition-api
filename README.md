@@ -1,5 +1,9 @@
 # live-chat
 
+# Project setup
+```
+https://live-chat-with-vue-capi.web.app/
+
 ## Project setup
 ```
 npm install
