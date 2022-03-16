@@ -7,7 +7,7 @@
             <div class="card d-inline-block border-2 border-warning rounded-pill py-1 px-2">
             {{message.message}}
             </div> 
-            <div>{{message.created_at}}</div>
+            <div class="date">{{message.created_at}}</div>
         </div>
 
         
@@ -18,7 +18,7 @@
                 </div>
                 <span><strong> : {{message.name}}</strong></span>
             </div>
-            <div>{{message.created_at}}</div>
+            <div class="date">{{message.created_at}}</div>
         </div>
         
     </div>
@@ -85,6 +85,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .date{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 14px;
+        color: #aaa;
+    }
 </style>
