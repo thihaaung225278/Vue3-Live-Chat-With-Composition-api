@@ -8,6 +8,14 @@ const routes = [
     path: "/",
     name: "Welcome",
     component: Welcome,
+    beforeEnter(to, from, next) {
+      let user = auth.currentUser;
+      if (user) {
+        next({ name: "Chatroom" });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/chatroom",
